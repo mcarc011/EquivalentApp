@@ -65,7 +65,7 @@ def equivalent(X1, F1, X2, F2,counter=False):
     temptlist = [] 
     for tem in temptylist:
         mapto = TupFind(np.array(tem))
-        tp = [] 
+        tp = [[[0,0] for m in mapto[0]]]  
         for mapper in mapto:
             tp += [[[tem[m[0]],tem[m[1]]] for m in mapper]]
         temptlist += [tp]
@@ -82,6 +82,8 @@ def equivalent(X1, F1, X2, F2,counter=False):
     return False
 
 col1,col2 = st.columns(2)
+
+st.title('Matrix Compare')
 
 with col1:
     matrix1 = st.text_area('Matrix 1')
